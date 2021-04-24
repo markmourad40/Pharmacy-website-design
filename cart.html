@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Online Pharmacy</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="eCommerce HTML Template Free Download" name="keywords">
+        <meta content="eCommerce HTML Template Free Download" name="description">
+
+        <!-- Favicon -->
+        <link href="img/logo.webp" rel="icon">
+
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400|Source+Code+Pro:700,900&display=swap" rel="stylesheet">
+
+        <!-- CSS Libraries -->
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+        <link href="lib/slick/slick.css" rel="stylesheet">
+        <link href="lib/slick/slick-theme.css" rel="stylesheet">
+
+        <!-- Template Stylesheet -->
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+
+    <body>
+        
+        <!-- Nav Bar Start -->
+        <div class="nav" style="height: 50px;">
+            <div class="container-fluid">
+                <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+                    <a href="#" class="navbar-brand">MENU</a>
+                    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                        <div class="navbar-nav mr-auto">
+                            <a href="index.html" class="nav-item nav-link">Home</a>
+                            <!-- <a href="product-list.html" class="nav-item nav-link">Categories</a> -->
+                            <div class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Categories</a>
+                                <div class="dropdown-menu">
+                                    <a href="medications.html" class="dropdown-item">Medications</a>
+                                    <a href="skin-care.html" class="dropdown-item">Skin Care</a>
+                                    <a href="hair-care.html" class="dropdown-item">Hair Care</a>
+                                    <a href="beauty-care.html" class="dropdown-item">Beauty Care</a>
+                                    <a href="body/personal-care.html" class="dropdown-item">Body/Personal Care</a>
+                                    <a href="mother/baby-care.html" class="dropdown-item">Mother/Baby Care</a>
+                                    <a href="medical-supplies.html" class="dropdown-item">Medical Supplies</a>
+                                    <a href="general-use.html" class="dropdown-item">General Use</a>
+                                </div>
+                            </div>
+                            <!-- <a href="product-detail.html" class="nav-item nav-link">Product Detail</a> -->
+                            <a href="cart.html" class="nav-item nav-link">Cart</a>
+                            <a href="checkout.html" class="nav-item nav-link">Checkout</a>
+                            <a href="wishlist.html" class="nav-item nav-link">Wishlist</a>
+                            <a href="contact.html" class="nav-item nav-link">Contact Us</a>
+                        </div>
+                        <div class="navbar-nav ml-auto">
+                            <a href="my-account.html" class="nav-item nav-link"><i class="fas fa-user"></i> 
+                                My account</a>
+                            <a href="login.html" class="nav-item nav-link"><i class="fas fa-sign-in-alt"></i>
+                                sine in</a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <!-- Nav Bar End -->      
+        
+        <!-- Bottom Bar Start -->
+        <div class="bottom-bar">
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <div class="col-md-3">
+                        <div class="logo">
+                            <a href="index.html">
+                                <img src="img/logo.webp" alt="Logo">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="search">
+                            <input type="text" placeholder="Search">
+                            <button><i class="fa fa-search"></i></button>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="user">
+                            <a href="wishlist.html" class="btn wishlist">
+                                <i class="fa fa-heart"></i>
+                                <span>(0)</span>
+                            </a>
+                            <a href="cart.html" class="btn cart">
+                                <i class="fa fa-shopping-cart"></i>
+                                <span id="addItmGORG">(0)</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Bottom Bar End -->
+        
+        <!-- Breadcrumb Start -->
+        <div class="breadcrumb-wrap">
+            <div class="container-fluid">
+                <ul class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item"><a href="#">Categories</a></li>
+                    <li class="breadcrumb-item active">Cart</li>
+                </ul>
+            </div>
+        </div>
+        <!-- Breadcrumb End -->
+        
+        <!-- Cart Start -->
+        <div class="cart-page">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="cart-page-inner">
+                            <div class="table-responsive">
+                                <table class="table table-bordered">
+                                    <thead class="thead-dark">
+                                        <tr>
+                                            <th>Product</th>
+                                            <th>Price</th>
+                                            <th>Quantity</th>
+                                            <th>Total</th>
+                                            <th>Remove</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="parentGORG" class="align-middle">
+                                        <tr>
+                                            <td>
+                                                <div class="img">
+                                                    <a href="#"><img src="img/med1.jpg" alt="Image"></a>
+                                                    <p>DAFLON 500mg</p>
+                                                </div>
+                                            </td>
+                                            <td id="1">$64</td>
+                                            <td>
+                                                <div class="qty">
+                                                    <button onclick = "remove('1','1res')" class="btn-minus"><i class="fa fa-minus"></i></button>
+                                                    <input type="text" value="0" id="1N" disabled>
+                                                    <button onclick="add('1','1N','1res')" class="btn-plus"><i class="fa fa-plus"></i></button>
+                                                </div>
+                                            </td>
+                                            <td id="1res">0</td>
+                                            <td><button onclick="removeAll('1N','1res')"><i class="fa fa-trash"></i></button></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>
+                                                <div class="img">
+                                                    <a href="#"><img src="img/med2.webp" alt="Image"></a>
+                                                    <p>MAXILASE syp</p>
+                                                </div>
+                                            </td>
+                                            <td id="2">$20</td>
+                                            <td>
+                                                <div class="qty">
+                                                    <button onclick = "remove('2','2res')" class="btn-minus"><i class="fa fa-minus"></i></button>
+                                                    <input type="text" value="0" id="2N" disabled>
+                                                    <button onclick="add('2','2N','2res')" class="btn-plus"><i class="fa fa-plus"></i></button>
+                                                </div>
+                                            </td>
+                                            <td id="2res">0</td>
+                                            <td><button onclick="removeAll('2N','2res')"><i class="fa fa-trash"></i></button></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>
+                                                <div class="img">
+                                                    <a href="#"><img src="img/med3.png" alt="Image"></a>
+                                                    <p>BRUFEN 400mg</p>
+                                                </div>
+                                            </td>
+                                            <td id="3">$30</td>
+                                            <td>
+                                                <div class="qty">
+                                                    <button onclick = "remove('3','3res')" class="btn-minus"><i class="fa fa-minus"></i></button>
+                                                    <input type="text" value="0" id="3N" disabled>
+                                                    <button onclick="add('3','3N','3res')" class="btn-plus"><i class="fa fa-plus"></i></button>
+                                                </div>
+                                            </td>
+                                            <td id="3res">0</td>
+                                            <td><button onclick="removeAll('3N','3res')"><i class="fa fa-trash"></i></button></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>
+                                                <div class="img">
+                                                    <a href="#"><img src="img/med4.jpg" alt="Image"></a>
+                                                    <p>TOPLEXIL syp</p>
+                                                </div>
+                                            </td>
+                                            <td id="4">$12</td>
+                                            <td>
+                                                <div class="qty">
+                                                    <button onclick="remove('4','4res')" class="btn-minus"><i class="fa fa-minus"></i></button>
+                                                    <input type="text" value="0" id="4N" disabled>
+                                                    <button onclick="add('4','4N','4res')" class="btn-plus"><i class="fa fa-plus"></i></button>
+                                                </div>
+                                            </td>
+                                            <td id="4res">0</td>
+                                            <td><button onclick="removeAll('4N','4res')"><i class="fa fa-trash"></i></button></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>
+                                                <div class="img">
+                                                    <a href="#"><img src="img/med5.jpg" alt="Image"></a>
+                                                    <p>CATAFLAM 50mg</p>
+                                                </div>
+                                            </td>
+                                            <td id="5">$33</td>
+                                            <td>
+                                                <div class="qty">
+                                                    <button onclick = "remove('5','5res')" class="btn-minus"><i class="fa fa-minus"></i></button>
+                                                    <input type="text" value="0" id="5N" disabled>
+                                                    <button onclick="add('5','5N','5res')" class="btn-plus"><i class="fa fa-plus"></i></button>
+                                                </div>
+                                            </td>
+                                            <td id="5res">0</td>
+                                            <td><button onclick="removeAll('5N','5res')"><i class="fa fa-trash"></i></button></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>
+                                                <div class="img">
+                                                    <a href="#"><img src="img/med6.jpg" alt="Image"></a>
+                                                    <p>PEDIAKID syp</p>
+                                                </div>
+                                            </td>
+                                            <td id="6">$24</td>
+                                            <td>
+                                                <div class="qty">
+                                                    <button onclick = "remove('6','6res')" class="btn-minus"><i class="fa fa-minus"></i></button>
+                                                    <input type="text" value="0" id="6N" disabled>
+                                                    <button onclick="add('6','6N','6res')" class="btn-plus"><i class="fa fa-plus"></i></button>
+                                                </div>
+                                            </td>
+                                            <td id="6res">0</td>
+                                            <td><button onclick="removeAll('6N','6res')"><i class="fa fa-trash"></i></button></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>
+                                                <div class="img">
+                                                    <a href="#"><img src="img/med7.jpg" alt="Image"></a>
+                                                    <p>PROTOZOLE 500mg</p>
+                                                </div>
+                                            </td>
+                                            <td id="7">$37</td>
+                                            <td>
+                                                <div class="qty">
+                                                    <button onclick="remove('7','7res')" class="btn-minus"><i class="fa fa-minus"></i></button>
+                                                    <input type="text" value="0" id="7N" disabled>
+                                                    <button onclick="add('7','7N','7res')" class="btn-plus"><i class="fa fa-plus"></i></button>
+                                                </div>
+                                            </td>
+                                            <td id="7res">0</td>
+                                            <td><button onclick="removeAll('7N','7res')"><i class="fa fa-trash"></i></button></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>
+                                                <div class="img">
+                                                    <a href="#"><img src="img/med8.jpg" alt="Image"></a>
+                                                    <p>PECTIPRO syp</p>
+                                                </div>
+                                            </td>
+                                            <td id="8">$11</td>
+                                            <td>
+                                                <div class="qty">
+                                                    <button onclick = "remove('8','8res')" class="btn-minus"><i class="fa fa-minus"></i></button>
+                                                    <input type="text" value="0" id="8N" disabled>
+                                                    <button onclick="add('8','8N','8res')"class="btn-plus"><i class="fa fa-plus"></i></button>
+                                                </div>
+                                            </td>
+                                            <td id="8res">0</td>
+                                            <td><button onclick="removeAll('8N','8res')"><i class="fa fa-trash"></i></button></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>
+                                                <div class="img">
+                                                    <a href="#"><img src="img/med9.jpg" alt="Image"></a>
+                                                    <p>BIPROFENID 150mg</p>
+                                                </div>
+                                            </td>
+                                            <td id="9">$20</td>
+                                            <td>
+                                                <div class="qty">
+                                                    <button onclick="remove('9','9res')" class="btn-minus"><i class="fa fa-minus"></i></button>
+                                                    <input type="text" value="0" id="9N" disabled>
+                                                    <button onclick="add('9','9N','9res')" class="btn-plus"><i class="fa fa-plus"></i></button>
+                                                </div>
+                                            </td>
+                                            <td id="9res">0</td>
+                                            <td><button onclick="removeAll('9N','9res')"><i class="fa fa-trash"></i></button></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="cart-page-inner">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="cart-summary">
+                                        <div class="cart-content">
+                                            <h1>Cart Summary</h1>
+                                            <p>Sub Total<span id="subTotal">$</span></p>
+                                            <p>Shipping Cost<span>$1</span></p>
+                                            <h2>Grand Total<span id="grandTotal">$</span></h2>
+                                        </div>
+                                        <div class="cart-btn">
+                                            <a href="general-use.html"><button>Update Cart</button></a>
+                                            <a href="checkout.html"><button>Checkout</button></a>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Cart End -->
+        
+        <!-- Footer Start -->
+        <div class="footer">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-widget">
+                            <h2>Get in Touch</h2>
+                            <div class="contact-info">
+                                <p><i class="fa fa-map-marker"></i>123 Pharmacy, Los Angeles, USA</p>
+                                <p><i class="fa fa-envelope"></i>email@example.com</p>
+                                <p><i class="fa fa-phone"></i>+123-456-7890</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-widget">
+                            <h2>Follow Us</h2>
+                            <div class="contact-info">
+                                <div class="social">
+                                    <a href=""><i class="fab fa-twitter"></i></a>
+                                    <a href=""><i class="fab fa-facebook-f"></i></a>
+                                    <a href=""><i class="fab fa-linkedin-in"></i></a>
+                                    <a href=""><i class="fab fa-instagram"></i></a>
+                                    <a href=""><i class="fab fa-youtube"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-widget">
+                            <h2>Company Info</h2>
+                            <ul>
+                                <li><a href="#">About Us</a></li>
+                                <li><a href="#">Privacy Policy</a></li>
+                                <li><a href="#">Terms & Condition</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-widget">
+                            <h2>Purchase Info</h2>
+                            <ul>
+                                <li><a href="#">Pyament Policy</a></li>
+                                <li><a href="#">Shipping Policy</a></li>
+                                <li><a href="#">Return Policy</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row payment align-items-center">
+                    <div class="col-md-6">
+                        <div class="payment-method">
+                            <h2>We Accept:</h2>
+                            <img src="img/payment-method.png" alt="Payment Method" />
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="payment-security">
+                            <h2>Secured By:</h2>
+                            <img src="img/godaddy.svg" alt="Payment Security" />
+                            <img src="img/norton.svg" alt="Payment Security" />
+                            <img src="img/ssl.svg" alt="Payment Security" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->      
+        
+        <!-- Back to Top -->
+        <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+        
+        <!-- JavaScript Libraries -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+        <script src="lib/easing/easing.min.js"></script>
+        <script src="lib/slick/slick.min.js"></script>
+        
+        <!-- Template Javascript -->
+        <script defer src="js/main.js"></script>
+    </body>
+</html>
